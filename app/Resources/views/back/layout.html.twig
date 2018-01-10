@@ -2,6 +2,8 @@
 
 {% block body %}
     <div class="wrapper">
+        {% include "back/common/_header.html.twig" %}
+        {% include "back/common/_aside.html.twig" %}
         <div class="content-wrapper">
             {% block content %}{% endblock %}
         </div>

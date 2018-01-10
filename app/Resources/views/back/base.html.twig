@@ -5,30 +5,35 @@
         <title>{% block title %}BackOffice - {% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets
-                "@AppBundle/Resources/public/css/bootstrap.css"
-                "@AppBundle/Resources/public/plugins/font-awesome/css/font-awesome.css"
+                "@AppBundle/Resources/public/plugins/bootstrap/dist/css/bootstrap.css"
                 "@AppBundle/Resources/public/css/AdminLTE.css"
+                "@AppBundle/Resources/public/plugins/Ionicons/css/ionicons.css"
                 "@AppBundle/Resources/public/css/skins/_all-skins.css"
             %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
         {% endblock %}
+
+        <!-- Google Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body class="hold-transition skin-blue fixed sidebar-mini">
         {% block body %}{% endblock %}
         {% block javascripts %}
             {% javascripts
-            "@AppBundle/Resources/public/js/jquery-3.2.1.min.js"
-            "@AppBundle/Resources/public/js/bootstrap.js"
+            "@AppBundle/Resources/public/plugins/jquery/dist/jquery.js"
+            "@AppBundle/Resources/public/plugins/bootstrap/dist/js/bootstrap.js"
+            "@AppBundle/Resources/public/plugins/jquery-slimscroll/jquery.slimscroll.js"
+            "@AppBundle/Resources/public/plugins/fastclick/lib/fastclick.js"
             "@AppBundle/Resources/public/js/adminlte.js"
-            "@AppBundle/Resources/public/js/pages/dashboard2.js"
-            "@AppBundle/Resources/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"
-            "@AppBundle/Resources/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"
             %}
             <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock %}
-
     </body>
 </html>
