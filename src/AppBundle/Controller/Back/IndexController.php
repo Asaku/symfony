@@ -5,6 +5,11 @@ namespace AppBundle\Controller\Back;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Class IndexController
+ * @package AppBundle\Controller\Back
+ *
+ */
 class IndexController extends Controller
 {
     /**

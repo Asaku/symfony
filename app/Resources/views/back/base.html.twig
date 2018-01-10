@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}BackOffice - {% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets
+                "@AppBundle/Resources/public/css/bootstrap.css"
+                "@AppBundle/Resources/public/css/AdminLTE.css"
+                "@AppBundle/Resources/public/css/skins/_all-skins.css"
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+            "@AppBundle/Resources/public/js/jquery-3.2.1.min.js"
+            "@AppBundle/Resources/public/js/bootstrap.js"
+            "@AppBundle/Resources/public/js/adminlte.js"
+            "@AppBundle/Resources/public/js/pages/dashboard2.js"
+            "@AppBundle/Resources/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"
+            "@AppBundle/Resources/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"
+            %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
     </body>
 </html>
