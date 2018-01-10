@@ -6,6 +6,7 @@
         {% block stylesheets %}
             {% stylesheets
                 "@AppBundle/Resources/public/css/bootstrap.css"
+                "@AppBundle/Resources/public/plugins/font-awesome/css/font-awesome.css"
                 "@AppBundle/Resources/public/css/AdminLTE.css"
                 "@AppBundle/Resources/public/css/skins/_all-skins.css"
             %}
@@ -14,7 +15,7 @@
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+    <body class="hold-transition skin-blue fixed sidebar-mini">
         {% block body %}{% endblock %}
         {% block javascripts %}
             {% javascripts

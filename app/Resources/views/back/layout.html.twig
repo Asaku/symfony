@@ -1,7 +1,9 @@
 {% extends "back/base.html.twig" %}
 
-    {% block title %}BackOffice - {% endblock %}
-
-    {% block body %}
-        {% block content %}{% endblock %}
-    {% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
