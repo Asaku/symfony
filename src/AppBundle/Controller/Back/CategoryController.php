@@ -26,7 +26,7 @@ class CategoryController extends Controller
 
         $categories = $em->getRepository('AppBundle:Category')->findAll();
 
-        return $this->render('category/index.html.twig', array(
+        return $this->render('back/category/index.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -48,10 +48,10 @@ class CategoryController extends Controller
             $em->persist($category);
             $em->flush();
 
-            return $this->redirectToRoute('category_show', array('id' => $category->getId()));
+            return $this->redirectToRoute('category_index');
         }
 
-        return $this->render('category/new.html.twig', array(
+        return $this->render('back/category/new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
         ));

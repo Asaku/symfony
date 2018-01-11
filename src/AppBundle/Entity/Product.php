@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +43,19 @@ class Product
      */
     private $price;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Category")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $categories;
+
+    /**
+     * Product constructor.
+     */
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -124,5 +138,35 @@ class Product
     {
         return $this->price;
     }
-}
 
+    /**
+     * @return mixed
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategories($category)
+    {
+        $this->categories[] = $category;
+    }
+
+    public function addition($a, $b)
+    {
+        return $a + $b;
+    }
+
+    public function testaddition()
+    {
+        $res = $this->addition(1, 5);
+
+        if ($res == 6)
+            return true;
+
+        return false;
+    }
+}
