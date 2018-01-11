@@ -21,7 +21,6 @@ class Listener
             return;
         }
 
-        //$entityManager = $args->getEntityManager();
-        die(dump($entity));
+        $entityManager = $args->getEntityManager();
     }
 }
